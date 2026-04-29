@@ -1,46 +1,138 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<title>Projects</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TQT - Dự án</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .projects-section {
+      padding: 60px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 28px;
+    }
+
+    .project-card img {
+      height: 220px;
+      object-fit: cover;
+    }
+  </style>
+</head>
 <body>
 
-<div class="sidebar">
-    <a href="index.html">index.html</a>
-    <a href="about.html">about.html</a>
-    <a href="projects.html">projects.html</a>
-    <a href="contact.html">contact.html</a>
-</div>
+  <nav>
+    <a href="index.html" class="logo">TQT</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html" class="active">Projects</a></li>
+      <li><a href="contact.html">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="main">
+  <section class="projects-section">
+    <h2 class="section-title">Dự án của tôi</h2>
+    <div class="section-line"></div>
 
-<nav>
-    <h2>TQT</h2>
-</nav>
+    <div class="projects-grid">
 
-<div class="section">
-    <h2 class="title">Dự án</h2>
-
-    <div class="projects">
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1520873779183-4d4f0f0c0d2c">
-            <div class="card-body">
-                Weed Detection AI
-            </div>
+      <!-- Project 1 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1530836369250-ef72a3f5cda8?w=600&q=80" alt="Weed Detection AI" />
+        <div class="project-info">
+          <h3>Weed Detection AI</h3>
+          <p>Dự án sử dụng Deep Learning để nhận diện và phân loại cỏ dại trong nông nghiệp.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">TensorFlow</span>
+            <span class="tag">OpenCV</span>
+            <span class="tag">CNN</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Tai-02" target="_blank" class="btn-primary" style="font-size:13px;padding:9px 18px;">
+              <i class="fab fa-github"></i> Xem trên GitHub
+            </a>
+            <a href="#" class="btn-outline" style="font-size:13px;padding:9px 18px;">Xem chi tiết</a>
+          </div>
         </div>
+      </div>
 
-        <div class="card">
-            <img src="https://images.unsplash.com/photo-1581091870622-1e7b7c0c0a2c">
-            <div class="card-body">
-                QLBTS
-            </div>
+      <!-- Project 2 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1587854692152-cbe660dbde88?w=600&q=80" alt="QLBTS" />
+        <div class="project-info">
+          <h3>QLBTS</h3>
+          <p>Phần mềm quản lý bán thuốc, quản lý kho, đơn hàng và thống kê doanh thu.</p>
+          <div class="project-tags">
+            <span class="tag">C#</span>
+            <span class="tag">WinForms</span>
+            <span class="tag">SQL Server</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Tai-02" target="_blank" class="btn-primary" style="font-size:13px;padding:9px 18px;">
+              <i class="fab fa-github"></i> Xem trên GitHub
+            </a>
+            <a href="#" class="btn-outline" style="font-size:13px;padding:9px 18px;">Xem chi tiết</a>
+          </div>
         </div>
+      </div>
+
+      <!-- Project 3 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&q=80" alt="Portfolio Website" />
+        <div class="project-info">
+          <h3>Portfolio Website</h3>
+          <p>Website portfolio cá nhân giới thiệu bản thân, kỹ năng và các dự án đã thực hiện.</p>
+          <div class="project-tags">
+            <span class="tag">HTML</span>
+            <span class="tag">CSS</span>
+            <span class="tag">JavaScript</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Tai-02" target="_blank" class="btn-primary" style="font-size:13px;padding:9px 18px;">
+              <i class="fab fa-github"></i> Xem trên GitHub
+            </a>
+            <a href="#" class="btn-outline" style="font-size:13px;padding:9px 18px;">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project 4 -->
+      <div class="project-card">
+        <img src="https://images.unsplash.com/photo-1504868584819-f8e8b4b6d7e3?w=600&q=80" alt="Data Analysis" />
+        <div class="project-info">
+          <h3>Data Analysis Tool</h3>
+          <p>Công cụ phân tích dữ liệu tự động, tạo báo cáo và biểu đồ thống kê trực quan.</p>
+          <div class="project-tags">
+            <span class="tag">Python</span>
+            <span class="tag">Pandas</span>
+            <span class="tag">Matplotlib</span>
+          </div>
+          <div class="project-buttons">
+            <a href="https://github.com/Tai-02" target="_blank" class="btn-primary" style="font-size:13px;padding:9px 18px;">
+              <i class="fab fa-github"></i> Xem trên GitHub
+            </a>
+            <a href="#" class="btn-outline" style="font-size:13px;padding:9px 18px;">Xem chi tiết</a>
+          </div>
+        </div>
+      </div>
+
     </div>
-</div>
+  </section>
 
-</div>
+  <footer>
+    &copy; 2024 Trần Quốc Tài. All rights reserved.
+    <span style="float:right;">
+      <a href="#" style="color:var(--purple);text-decoration:none;font-size:18px;"><i class="fas fa-arrow-up"></i></a>
+    </span>
+  </footer>
 
 </body>
 </html>
