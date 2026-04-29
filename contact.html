@@ -1,42 +1,186 @@
 <!DOCTYPE html>
-<html>
+<html lang="vi">
 <head>
-<title>Contact</title>
-<link rel="stylesheet" href="style.css">
-</head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TQT - Liên hệ</title>
+  <link rel="stylesheet" href="style.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <style>
+    .contact-section {
+      padding: 60px 80px;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
 
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 1fr 1.5fr;
+      gap: 40px;
+      align-items: start;
+    }
+
+    .contact-left {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+    }
+
+    .contact-left h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 28px;
+      color: var(--text);
+    }
+
+    .contact-right {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 32px;
+    }
+
+    .contact-right h3 {
+      font-size: 18px;
+      font-weight: 700;
+      margin-bottom: 24px;
+      color: var(--text);
+    }
+
+    .toast {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background: var(--purple);
+      color: #fff;
+      padding: 14px 24px;
+      border-radius: 10px;
+      font-size: 14px;
+      font-weight: 500;
+      z-index: 999;
+      animation: slideIn 0.3s ease;
+    }
+
+    @keyframes slideIn {
+      from { transform: translateY(20px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+  </style>
+</head>
 <body>
 
-<div class="sidebar">
-    <a href="index.html">index.html</a>
-    <a href="about.html">about.html</a>
-    <a href="projects.html">projects.html</a>
-    <a href="contact.html">contact.html</a>
-</div>
+  <nav>
+    <a href="index.html" class="logo">TQT</a>
+    <ul class="nav-links">
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="projects.html">Projects</a></li>
+      <li><a href="contact.html" class="active">Contact</a></li>
+    </ul>
+  </nav>
 
-<div class="main">
+  <section class="contact-section">
+    <h2 class="section-title">Liên hệ với tôi</h2>
+    <div class="section-line"></div>
 
-<nav>
-    <h2>TQT</h2>
-</nav>
+    <div class="contact-grid">
 
-<div class="section contact">
+      <!-- Left: Contact Info -->
+      <div class="contact-left">
+        <h3>Thông tin liên hệ</h3>
 
-<div>
-    <h2>Liên hệ</h2>
-    <p>Email: example@gmail.com</p>
-</div>
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fas fa-envelope" style="color:var(--purple-light);"></i></div>
+          <div class="info-text">
+            <h4>Email</h4>
+            <p>taiquoc02@gmail.com</p>
+          </div>
+        </div>
 
-<div>
-    <input placeholder="Họ tên">
-    <input placeholder="Email">
-    <textarea placeholder="Nội dung"></textarea>
-    <button class="btn btn-primary">Gửi</button>
-</div>
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fab fa-github" style="color:var(--purple-light);"></i></div>
+          <div class="info-text">
+            <h4>GitHub</h4>
+            <p>github.com/Tai-02</p>
+          </div>
+        </div>
 
-</div>
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fab fa-facebook" style="color:var(--purple-light);"></i></div>
+          <div class="info-text">
+            <h4>Facebook</h4>
+            <p>facebook.com/toidev02</p>
+          </div>
+        </div>
 
-</div>
+        <div class="contact-info-item">
+          <div class="icon-wrap"><i class="fas fa-map-marker-alt" style="color:var(--purple-light);"></i></div>
+          <div class="info-text">
+            <h4>Địa chỉ</h4>
+            <p>Việt Nam</p>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right: Form -->
+      <div class="contact-right">
+        <h3>Gửi tin nhắn cho tôi</h3>
+
+        <div class="form-group">
+          <label for="name">Họ và tên</label>
+          <input type="text" id="name" placeholder="Nhập họ và tên của bạn" />
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" placeholder="Nhập email của bạn" />
+        </div>
+
+        <div class="form-group">
+          <label for="message">Nội dung</label>
+          <textarea id="message" rows="5" placeholder="Nhập nội dung tin nhắn..."></textarea>
+        </div>
+
+        <button class="btn-primary" onclick="sendMessage()" style="width:100%;justify-content:center;margin-top:4px;">
+          <i class="fas fa-paper-plane"></i> Gửi tin nhắn
+        </button>
+      </div>
+    </div>
+  </section>
+
+  <div class="toast" id="toast">
+    <i class="fas fa-check-circle"></i>&nbsp; Tin nhắn đã được gửi thành công!
+  </div>
+
+  <footer>
+    &copy; 2024 Trần Quốc Tài. All rights reserved.
+    <span style="float:right;">
+      <a href="#" style="color:var(--purple);text-decoration:none;font-size:18px;"><i class="fas fa-arrow-up"></i></a>
+    </span>
+  </footer>
+
+  <script>
+    function sendMessage() {
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      if (!name || !email || !message) {
+        alert('Vui lòng điền đầy đủ thông tin!');
+        return;
+      }
+
+      const toast = document.getElementById('toast');
+      toast.style.display = 'block';
+      setTimeout(() => { toast.style.display = 'none'; }, 3000);
+
+      document.getElementById('name').value = '';
+      document.getElementById('email').value = '';
+      document.getElementById('message').value = '';
+    }
+  </script>
 
 </body>
 </html>
