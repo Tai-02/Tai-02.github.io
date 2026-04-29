@@ -1,46 +1,131 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+
 body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #0b1220;
-    color: #e5e7eb;
+  background: #0b0f1a;
+  color: white;
 }
 
-.nav {
-    background: #111827;
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 15px;
+/* NAV */
+nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 20px 80px;
+  align-items: center;
 }
 
-.nav a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
+nav h1 {
+  color: #7c5cff;
 }
 
-.container {
-    max-width: 1000px;
-    margin: auto;
-    padding: 20px;
+nav ul {
+  display: flex;
+  gap: 25px;
+  list-style: none;
+}
+
+nav ul li a {
+  color: #ccc;
+  text-decoration: none;
+}
+
+nav ul li a:hover {
+  color: #7c5cff;
+}
+
+/* HERO */
+.hero {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 80px;
+}
+
+.hero-text h2 {
+  font-size: 48px;
+}
+
+.hero-text span {
+  color: #7c5cff;
+}
+
+.hero-text p {
+  margin-top: 15px;
+  color: #aaa;
+  max-width: 500px;
+}
+
+.btn {
+  margin-top: 20px;
+  display: inline-block;
+  padding: 10px 20px;
+  background: #7c5cff;
+  color: white;
+  border-radius: 8px;
+  text-decoration: none;
+}
+
+/* CARD */
+.section {
+  padding: 60px 80px;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 20px;
 }
 
 .card {
-    background: #1e293b;
-    padding: 20px;
-    margin: 15px 0;
-    border-radius: 12px;
+  background: #141a2a;
+  padding: 20px;
+  border-radius: 12px;
+  transition: 0.3s;
 }
 
-header {
-    text-align: center;
-    padding: 60px 20px;
-    background: linear-gradient(135deg, #4f46e5, #06b6d4);
+.card:hover {
+  transform: translateY(-5px);
 }
 
-footer {
+/* CONTACT */
+input, textarea {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  background: #141a2a;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+button {
+  margin-top: 10px;
+  padding: 10px 15px;
+  background: #7c5cff;
+  border: none;
+  color: white;
+  border-radius: 8px;
+}
+
+/* responsive */
+@media(max-width: 768px) {
+  .hero {
+    flex-direction: column;
     text-align: center;
-    padding: 20px;
-    background: #111827;
-    margin-top: 40px;
+  }
+
+  nav {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .cards {
+    grid-template-columns: 1fr;
+  }
 }
